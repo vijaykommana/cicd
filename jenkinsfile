@@ -22,5 +22,11 @@ pipeline{
                 sh "mvn verify -DskipUnitTests"
             }
         }
+        stage('docker log in'){
+            steps{
+                sh "docker login -u vijaykommana -p vij@y1996"
+                sh "docker image build -t spc:3.0"
+            }
+        }
     }
 }
